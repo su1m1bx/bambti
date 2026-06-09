@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>메모장</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="win" id="mainWin">
+
+        <div class="titlebar">
+          <div class="titlebar-left">
+            <div class="titlebar-icon"></div>
+            <span class="titlebar-title">✦ TODO LIST ✦</span>
+          </div>
+          <div class="titlebar-btns">
+            <div class="tbtn">_</div>
+            <div class="tbtn">□</div>
+            <div class="tbtn close">×</div>
+          </div>
+        </div>
+
+        <div class="win-content">
+          <div class="search-row">
+            <input type="text" id="search-input" placeholder="검색.." />
+            <button class="px-btn" id="search-btn">검색</button>
+          </div>
+          <div class="add-row">
+            <input type="text" id="todo-input" placeholder="할 일 입력.." />
+            <button class="px-btn" id="add-btn">추가</button>
+          </div>
+          <div class="divider"></div>
+          <div class="todo-list" id="todo-list"></div>
+        </div>
+
+        <div class="statusbar">
+          <span>항목 없음</span>
+          <span><span class="pixel-heart">♥</span> su1m1bx.sys</span>
+        </div>
+
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
