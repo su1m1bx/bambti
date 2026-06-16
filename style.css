@@ -359,8 +359,32 @@
   position: absolute; /* 이게 없으면 left/top이 먹질 않음 */
 }
 
-
-.icon img{
+.icon img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 70px;
-  color:white;
+  color: white;
+}
+
+icon {
+  max-width: 80px;
+  max-height: 60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon:hover {
+  max-width: 80px;
+  max-height: 60;
+  background-color: rgba(255, 255, 255, 0.281);
+}
+
+.icon button {
+  background: none;
+  border:none;
+  display: flex;
+  text-align: center;
+  
 }
