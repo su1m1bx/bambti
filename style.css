@@ -54,7 +54,7 @@
 }
 
 .titlebar {
-  background-color:hsl(340, 100%, 88%); 
+  background-color: hsl(340, 100%, 88%);
   padding: 4px 8px;
   display: flex;
   align-items: center;
@@ -350,4 +350,17 @@
   background: #9940a0;
   color: #ffe6f6;
   border-color: #6a1a70;
+}
+
+.win {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute; /* 이게 없으면 left/top이 먹질 않음 */
+}
+
+
+.icon img{
+  width: 70px;
+  color:white;
 }
