@@ -49,7 +49,10 @@
   width: 100%;
   max-width: 360px;
   margin: 0 auto;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
@@ -352,13 +355,6 @@
   border-color: #6a1a70;
 }
 
-.win {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute; /* 이게 없으면 left/top이 먹질 않음 */
-}
-
 .icon img {
   display: flex;
   justify-content: center;
@@ -369,7 +365,7 @@
 
 icon {
   max-width: 80px;
-  max-height: 60;
+  max-height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -377,14 +373,153 @@ icon {
 
 .icon:hover {
   max-width: 80px;
-  max-height: 60;
+  max-height: 60px;
   background-color: rgba(255, 255, 255, 0.281);
 }
 
 .icon button {
   background: none;
-  border:none;
+  border: none;
   display: flex;
   text-align: center;
-  
+}
+
+/* =============================================
+   📱 모바일 반응형 (480px 이하)
+   ============================================= */
+@media (max-width: 480px) {
+  .desktop {
+    /* 모바일에선 패딩 줄이고 overflow-y 허용 */
+    padding: 12px 8px;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+    background-size: 150px;
+  }
+
+  .win {
+    /* 절대 위치 대신 일반 흐름으로 배치 */
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    /* 상단 여백으로 배경 일부 보이게 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .win-content {
+    padding: 10px 8px;
+  }
+
+  /* 입력창과 버튼 터치하기 편하게 크게 */
+  .search-row input,
+  .add-row input {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .px-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .px-btn.sm {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  /* 체크박스 터치 영역 크게 */
+  .todo-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .todo-item input[type="checkbox"]:checked::after {
+    font-size: 13px;
+    top: -2px;
+    left: 1px;
+  }
+
+  .todo-text {
+    font-size: 12px;
+  }
+
+  .del-btn {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  /* 할 일 목록 높이 늘리기 */
+  .todo-list {
+    max-height: 320px;
+  }
+
+  /* 타이틀바 텍스트 살짝 크게 */
+  .titlebar-title {
+    font-size: 13px;
+  }
+
+  .tbtn {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .statusbar span {
+    font-size: 11px;
+  }
+}
+
+/* =============================================
+   📱 아주 작은 화면 (360px 이하, 갤럭시 S 등)
+   ============================================= */
+@media (max-width: 360px) {
+  .desktop {
+    padding: 8px 4px;
+  }
+
+  .win-content {
+    padding: 8px 6px;
+  }
+
+  .search-row,
+  .add-row {
+    gap: 3px;
+  }
+
+  .px-btn {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+
+  .todo-text {
+    font-size: 11px;
+  }
+}
+
+/* =============================================
+   🖥️ 태블릿 (481px ~ 768px)
+   ============================================= */
+@media (min-width: 481px) and (max-width: 768px) {
+  .win {
+    max-width: 420px;
+  }
+
+  .desktop {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .win {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 40px auto;
+  }
 }
